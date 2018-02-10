@@ -14127,7 +14127,6 @@ input:focus {
   outline: none; }
 
 .content-wrapper {
-  background: #f2f7f8;
   margin-left: 215px;
   min-height: 100vh;
   padding: 2rem 1rem;
@@ -14252,10 +14251,25 @@ pre {
   display: flex;
   align-items: center; }
 
-.expired-medicines table {
+#medicine-sales-chart {
+  min-height: 500px; }
+
+table {
   font-size: 1.1rem;
   margin-top: 1.5rem;
   text-align: center; }
+
+.patient #nearest-doctor-map {
+  min-height: 500px; }
+
+.patient .card-deck {
+  display: inline-block; }
+
+.patient table {
+  text-align: left; }
+
+#historyModal table {
+  text-align: left; }
 
 .card.card-social {
   text-align: center; }
@@ -14519,3 +14533,19 @@ input {
   color: #1c2c3f; }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+#qrCodeScannerModal .modal-body .card .card-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#qrCodeScannerModal  .reader {
+  width: 100%;
+  height: 100%;
+
+}
+
+#qrCodeScannerModal  video {
+ width: 100%;
+ height: 100%;
+} 

@@ -1,0 +1,45 @@
+<div class="modal fade" id="buyMedicineModal" tabindex="-1" role="dialog" aria-labelledby="buyMedicineModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="buyMedicineModalTitle">Buy Medicine</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="medicineType">Select Medicine</label>
+              <select class="form-control" id="medicineType">
+                <option value="calpol">Calpol</option>
+                <option value="eyeres">Eyeres</option>
+                <option value="jeveres">Jeveres</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="medicineQuantity">Quantity</label>
+              <input type="number" class="form-control" id="medicineQuantity" placeholder="Quantity">
+            </div>
+            <div class="form-group my-4">
+              <div class="input-group">
+                <div class="input-group">
+                  <label>Total Price</label>  
+                </div>
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Rs</span>
+                </div>
+                <input type="text" class="form-control" value="2300.00" disabled/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary buy-medicine-button">Buy Medicine</button>
+      </div>
+    </div>
+  </div>
+</div>

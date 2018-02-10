@@ -1,0 +1,66 @@
+<% include partials/_header %>
+<div class="row row-offcanvas row-offcanvas-right patient">
+  <div class="content-wrapper">
+    <h3 class="page-heading mb-4">Dashboard</h3>
+    <div class="card-deck col-lg-6">
+      <div class="card col-lg-12 px-0 mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Nearest Doctors</h5>
+          <!-- <div id="nearest-doctor-map"></div> -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d15079.819529091303!2d72.83382334788178!3d19.109635136193063!3m2!1i1024!2i768!4f13.1!2m1!1snearest+doctors!5e0!3m2!1sen!2sin!4v1518269082699"
+            width="100%" height="400px;" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck col-lg-6">
+      <div class="card col-lg-12 px-0 mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Buy Medicine</h5>
+          <div class="table-responsive">
+            <table class="table center-aligned-table">
+              <thead>
+                <tr class="text-primary">
+                  <th>Buy From</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="">
+                  <td>Jayesh Koli</td>
+                  <td><a href="#" class="btn btn-outline-success btn-md" data-toggle="modal"
+                      data-target="#qrCodeScannerModal">Buy</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck col-lg-6">
+      <div class="card col-lg-12 px-0 mb-4">
+        <div class="card-body">
+          <h5 class="card-title">History</h5>
+          <div class="table-responsive">
+            <table class="table center-aligned-table">
+              <tbody>
+                <tr class="">
+                  <td>
+                    You Bought <span class="bought-med">Eyedre</span> from <span class="bought-from">Dr. Sumit Puter</span> on <span class="bought-date">09th February 2018</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    You Bought <span class="bought-med">Calpol</span> from <span class="bought-from">Dr. Jayesh Koli</span> on <span class="bought-date">08th February 2018</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include partials/_footer %>
+<% include partials/qrCodeScannerModal %>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Alchemist</title>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" />
+  </head>
+
+  <body>
+    <div class=" container-scroller patient">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+          <button class="navbar-toggler navbar-toggler d-none d-lg-block navbar-dark align-self-center mr-3" type="button" data-toggle="minimize">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- <form class="form-inline mt-2 mt-md-0 d-none d-lg-block"> -->
+            <!--   <input class="form-control mr-sm-2 search" type="text" placeholder="Search"> -->
+            <!-- </form> -->
+          <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
+            <li class="nav-item">
+              <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="images/face.jpg" alt=""></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-dark navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- partial -->
+      <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-right">
+          <div class="content-wrapper">
+            <h3 class="page-heading mb-4">Dashboard</h3>
+            <div class="card-deck col-lg-6">
+              <div class="card col-lg-12 px-0 mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">Nearest Doctors</h5>
+                  <!-- <div id="nearest-doctor-map"></div> -->
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d15079.819529091303!2d72.83382334788178!3d19.109635136193063!3m2!1i1024!2i768!4f13.1!2m1!1snearest+doctors!5e0!3m2!1sen!2sin!4v1518269082699"
+                    width="100%" height="400px;" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="card-deck col-lg-6">
+              <div class="card col-lg-12 px-0 mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">History</h5>
+                  <div class="table-responsive">
+                    <table class="table center-aligned-table">
+                      <tbody>
+                        <tr class="">
+                          <td>
+                            You Bought <span class="bought-med">Eyedre</span> from <span class="bought-from">Dr. Sumit Puter</span> on <span class="bought-date">09th February 2018</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            You Bought <span class="bought-med">Calpol</span> from <span class="bought-from">Dr. Jayesh Koli</span> on <span class="bought-date">08th February 2018</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="container-fluid clearfix">
+              <span class="float-right">
+              </span>
+            </div>
+          </footer>
+
+          <!-- partial -->
+        </div>
+      </div>
+
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/misc.js"></script>
+    <script src="js/chart.js"></script>
+  </body>
+
+</html>
