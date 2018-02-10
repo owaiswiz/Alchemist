@@ -14257,6 +14257,9 @@ pre {
   margin-top: 1.5rem;
   text-align: center; }
 
+#medicine-sales-chart {
+  min-height: 500px; }
+
 .card.card-social {
   text-align: center; }
   .card.card-social .highlight-icon {
