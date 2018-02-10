@@ -14127,7 +14127,6 @@ input:focus {
   outline: none; }
 
 .content-wrapper {
-  background: #f2f7f8;
   margin-left: 215px;
   min-height: 100vh;
   padding: 2rem 1rem;
@@ -14534,3 +14533,19 @@ input {
   color: #1c2c3f; }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+#qrCodeScannerModal .modal-body .card .card-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#qrCodeScannerModal  .reader {
+  width: 100%;
+  height: 100%;
+
+}
+
+#qrCodeScannerModal  video {
+ width: 100%;
+ height: 100%;
+} 
