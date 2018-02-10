@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "atom": "#7df89vhsd",
+      "size": 25
+    },
+    {
+      "atom": "#hysdhsdis",
+      "size": 45
+    },
+    {
+      "atom": "#hjfwhefu5",
+      "size": 40
+    },
+    {
+      "atom": "#sdih8y3r",
+      "size": 30
+    },
+    {
+      "atom": "#Hshvbs7d",
+      "size": 50
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 1,
+      "bond": 1
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "bond": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "bond": 1
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "bond": 1
+    }
+  ]
+}
