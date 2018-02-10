@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 /* ---- reset ---- */
 
 body {
@@ -73,11 +73,12 @@ body h1 {
     letter-spacing: 1px;
     padding-left: 2rem;
     font-size: 2rem;
-    font-family: 'Rammetto One', cursive;
+    font-family: 'Roboto', cursive;
+    font-weight: bolder;
 }
 
 #canvas {
-    padding-top: 25%;
+  height: 100vh;
 }
 #canvas svg {
 

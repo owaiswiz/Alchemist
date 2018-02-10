@@ -3,7 +3,6 @@
 <html>
   <head>
       
-<!--    <script src="https://d3js.org/d3.v4.min.js"></script>-->
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="css/style.css">
       <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -119,8 +118,8 @@ var graph = {
 var hashes_dict = ["#shdbfh","#sfgsidfj","#hdsbfsf","#idhbfd","#hbdfdfd"];
 var hashes_dict_len = hashes_dict.length;
 for (var i = 0; i < hashes_dict_len; i++) {
-    graph.nodes.push({
       "atom": hashes_dict[i],
+    graph.nodes.push({
       "size": Math.floor(Math.random() * 150) + 50  
     });
     if(i != hashes_dict_len-1){
