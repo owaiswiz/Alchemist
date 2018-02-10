@@ -6,6 +6,18 @@ router.get('/', ensureAuthenticated, function (req, res) {
   res.render('index', {username: req.user.username });
 });
 
+router.get('/chemist',function(req,res) {
+  res.render('chemist');
+});
+
+router.get('/doctor',function(req,res) {
+  res.render('doctor');
+});
+
+router.get('/patient',function(req,res) {
+  res.render('patient');
+});
+
 
 
 function ensureAuthenticated(req, res, next) {

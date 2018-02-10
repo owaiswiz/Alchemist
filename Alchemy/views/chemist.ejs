@@ -1,0 +1,173 @@
+<% include partials/_header %>
+<div class="row row-offcanvas row-offcanvas-right">
+  <div class="content-wrapper">
+    <h3 class="page-heading mb-4">Dashboard</h3>
+    <div class="statistics-row row">
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
+        <div class="card card-statistics">
+          <div class="card-body btb btn-primary-outline buy-medicine">
+            <div class="clearfix">
+              <div class="float-left">
+                <h4 class="text-primary">
+                  <i class="fa fa-cart-plus highlight-icon" aria-hidden="true"></i>
+                </h4>
+              </div>
+              <div class="float-right buy-label">
+                <h4 class="card-text text-primary">
+                  Buy
+                </h4>
+                <!-- <button type="button" class="btn btn-outline-primary bold-text card-text">Buy Medicine</button> -->
+              </div>
+            </div>
+            <p class="text-muted">
+              <i class="fa fa-info-circle mr-1" aria-hidden="true"></i> Buy Medicine From Manufacturer
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
+        <div class="card card-statistics">
+          <div class="card-body">
+            <div class="clearfix">
+              <div class="float-left">
+                <h4 class="text-danger">
+                  <i class="fa fa-bar-chart-o highlight-icon" aria-hidden="true"></i>
+                </h4>
+              </div>
+              <div class="float-right">
+                <p class="card-text text-dark">Available</p>
+                <h4 class="bold-text total-sales-val pull-right">29</h4>
+              </div>
+            </div>
+            <p class="text-muted">
+              <i class="fa fa-info-circle mr-1" aria-hidden="true"></i> Types of Medicines in Stock
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
+        <div class="card card-statistics">
+          <div class="card-body">
+            <div class="clearfix">
+              <div class="float-left">
+                <h4 class="text-warning">
+                  <i class="fa fa-shopping-cart highlight-icon" aria-hidden="true"></i>
+                </h4>
+              </div>
+              <div class="float-right">
+                <p class="card-text text-dark">Orders</p>
+                <h4 class="bold-text">656</h4>
+              </div>
+            </div>
+            <p class="text-muted">
+              <i class="fa fa-info-circle mr-1" aria-hidden="true"></i> Total Orders in the Past 30 Days
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
+        <div class="card card-statistics">
+          <div class="card-body">
+            <div class="clearfix">
+              <div class="float-left">
+                <h4 class="text-success">
+                  <i class="fa fa-dollar highlight-icon" aria-hidden="true"></i>
+                </h4>
+              </div>
+              <div class="float-right">
+                <p class="card-text text-dark">Revenue</p>
+                <h4 class="bold-text">$65656</h4>
+              </div>
+            </div>
+            <p class="text-muted">
+              <i class="fa fa-info-circle mr-1" aria-hidden="true"></i> Total Revenue Generated in the Past 30 Days
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck medicine-sales expired-medicines">
+      <div class="card col-lg-12 px-0 mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Medicine Sales</h2>
+          <div id="medicine-sales-chart"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck expired-medicines">
+      <div class="card col-lg-12 px-0 mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Expired Medicines</h2>
+          <div class="table-responsive">
+            <table class="table center-aligned-table">
+              <thead>
+                <tr class="text-primary">
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Expired On</th>
+                  <th>Purchased On</th>
+                  <th>Purchased From</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="">
+                  <td>AD242398C</td>
+                  <td>Eayelie</td>
+                  <td>09 February 2018</td>
+                  <td>07 January 2011</td>
+                  <td>EyeSols Pvt. Ltd.</td>
+                  <td><a href="#" class="btn btn-outline-success btn-md" data-toggle="modal" data-target="#orderReplacementModal">Order Replacement</a></td>
+                  <td><a href="#" class="btn btn-outline-danger btn-md">Remove From Inventory</a></td>
+                </tr>
+                <tr class="">
+                  <td>H9231238AC</td>
+                  <td>Calpol</td>
+                  <td>08 February 2018</td>
+                  <td>02 January 2017</td>
+                  <td>Alchemy Inc.</td>
+                  <td><a href="#" class="btn btn-outline-success btn-md" data-toggle="modal" data-target="#orderReplacementModal">Order Replacement</a></td>
+                  <td><a href="#" class="btn btn-outline-danger btn-md">Remove From Inventory</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck expired-medicines">
+      <div class="card col-lg-12 px-0 mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Inventory Alert</h2>
+          <div class="table-responsive">
+            <table class="table center-aligned-table">
+              <thead>
+                <tr class="text-primary">
+                  <th>Name</th>
+                  <th>Current Stock</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="">
+                  <td>Eayelie</td>
+                  <td>04</td>
+                  <td><a href="#" class="btn btn-outline-success btn-md">Order More</a></td>
+                </tr>
+                <tr class="">
+                  <td>Calpol</td>
+                  <td>02</td>
+                  <td><a href="#" class="btn btn-outline-success btn-md">Order More</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include partials/_footer %>
+<% include partials/buyMedicineModal.ejs %>
+<% include partials/orderReplacementModal.ejs %>
