@@ -1,5 +1,5 @@
 <% include partials/_header %>
-<div class="row row-offcanvas row-offcanvas-right">
+<div class="row row-offcanvas row-offcanvas-right patient">
   <div class="content-wrapper">
     <h3 class="page-heading mb-4">Dashboard</h3>
     <div class="card-deck col-lg-6">
@@ -21,25 +21,15 @@
             <table class="table center-aligned-table">
               <thead>
                 <tr class="text-primary">
-                  <th>Name</th>
-                  <th>Age</th>
-                  <th>Sex</th>
-                  <th>Diagnosis</th>
-                  <th></th>
-                  <th></th>
+                  <th>Buy From</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="">
-                  <td>Yash Puthran</td>
-                  <td>19</td>
-                  <td>Male</td>
-                  <td>Eardrum Ruptured</td>
-                  <td><a href="#" class="btn btn-outline-success btn-sm" data-toggle="modal"
-                      data-target="#historyModal">History</a></td>
-                  <td><a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal"
-                      data-target="#prescribeMedicineModal">Prescribe</a></td>
+                  <td>Jayesh Koli</td>
+                  <td><a href="#" class="btn btn-outline-success btn-md" data-toggle="modal"
+                      data-target="#qrCodeScannerModal">Buy</a></td>
                 </tr>
               </tbody>
             </table>
@@ -73,3 +63,4 @@
   </div>
 </div>
 <% include partials/_footer %>
+<% include partials/qrCodeScannerModal %>
