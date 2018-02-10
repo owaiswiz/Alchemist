@@ -14252,13 +14252,25 @@ pre {
   display: flex;
   align-items: center; }
 
-.expired-medicines table {
+#medicine-sales-chart {
+  min-height: 500px; }
+
+table {
   font-size: 1.1rem;
   margin-top: 1.5rem;
   text-align: center; }
 
-#medicine-sales-chart {
+.patient #nearest-doctor-map {
   min-height: 500px; }
+
+.patient .card-deck {
+  display: inline-block; }
+
+.patient table {
+  text-align: left; }
+
+#historyModal table {
+  text-align: left; }
 
 .card.card-social {
   text-align: center; }

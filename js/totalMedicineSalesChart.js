@@ -4,15 +4,26 @@ Highcharts.chart('medicine-sales-chart', {
     text: 'Total Medicine Sales - 7 Days'
   },
 
+  xAxis: {
+    // type: 'datetime',
+    // dateTimeLabelFormats: {
+    //   day: '%A'    //ex- 01 Jan 2016
+    // }
+    categories: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+    labels: {
+      align: 'left'
+    }
+  },
+
   yAxis: {
     title: {
       text: 'Number of Medicines Sold'
     }
   },
   legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle'
+    layout: 'horizontal',
+    align: 'center',
+    verticalAlign: 'bottom'
   },
 
   plotOptions: {
@@ -20,7 +31,8 @@ Highcharts.chart('medicine-sales-chart', {
       label: {
         connectorAllowed: false
       },
-      pointStart: 'Sunday'
+      // pointStart: Date.UTC(),
+      // pointInterval: 24 * 3600 * 1000
     }
   },
 
@@ -35,10 +47,10 @@ Highcharts.chart('medicine-sales-chart', {
     data: [11744, 16005, 19771, 20185, 24377, 32147, 39387]
   }, {
     name: 'Teses',
-    data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+    data: [ 92323, 7988, 12169, 15112, 22452, 34400, 34227]
   }, {
     name: 'Jevere',
-    data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+    data: [5948, 8105, 11248, 8989, 11816, 18274, 18111]
   }],
 
   responsive: {

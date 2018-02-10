@@ -125,18 +125,18 @@
               </div>
             </div>
             <!-- <div class="row"> -->
-            <!--   <div class="col-md-5 mb-4"> -->
-            <!--     <div class="card"> -->
-            <!--       <div class="card-body"> -->
-            <!--         <h5 class="card-title">Total Sales</h5> -->
-            <!--         <div class="custom-legend-container w-75 mx-auto"> -->
-            <!--           <canvas id="sales-chart"></canvas> -->
-            <!--         </div> -->
-            <!--         <div id="sales-chart-legend" class="legend-right"></div> -->
-            <!--       </div> -->
-            <!--     </div> -->
-            <!--   </div> -->
-            <!-- </div> -->
+              <!--   <div class="col-md-5 mb-4"> -->
+                <!--     <div class="card"> -->
+                  <!--       <div class="card-body"> -->
+                    <!--         <h5 class="card-title">Total Sales</h5> -->
+                    <!--         <div class="custom-legend-container w-75 mx-auto"> -->
+                      <!--           <canvas id="sales-chart"></canvas> -->
+                      <!--         </div> -->
+                    <!--         <div id="sales-chart-legend" class="legend-right"></div> -->
+                    <!--       </div> -->
+                  <!--     </div> -->
+                <!--   </div> -->
+              <!-- </div> -->
             <div class="card-deck medicine-sales expired-medicines">
               <div class="card col-lg-12 px-0 mb-4">
                 <div class="card-body">
@@ -169,7 +169,7 @@
                           <td>09 February 2018</td>
                           <td>07 January 2011</td>
                           <td>EyeSols Pvt. Ltd.</td>
-                          <td><a href="#" class="btn btn-outline-success btn-md">Order Replacement</a></td>
+                          <td><a href="#" class="btn btn-outline-success btn-md" data-toggle="modal" data-target="#orderReplacementModal">Order Replacement</a></td>
                           <td><a href="#" class="btn btn-outline-danger btn-md">Remove From Inventory</a></td>
                         </tr>
                         <tr class="">
@@ -178,7 +178,7 @@
                           <td>08 February 2018</td>
                           <td>02 January 2017</td>
                           <td>Alchemy Inc.</td>
-                          <td><a href="#" class="btn btn-outline-success btn-md">Order Replacement</a></td>
+                          <td><a href="#" class="btn btn-outline-success btn-md" data-toggle="modal" data-target="#orderReplacementModal">Order Replacement</a></td>
                           <td><a href="#" class="btn btn-outline-danger btn-md">Remove From Inventory</a></td>
                         </tr>
                       </tbody>
@@ -232,6 +232,78 @@
 
     </div>
 
+    <div class="modal fade" id="buyMedicineModal" tabindex="-1" role="dialog" aria-labelledby="buyMedicineModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="buyMedicineModalTitle">Buy Medicine</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="medicineType">Select Medicine</label>
+                  <select class="form-control" id="medicineType">
+                    <option value="calpol">Calpol</option>
+                    <option value="eyeres">Eyeres</option>
+                    <option value="jeveres">Jeveres</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="medicineQuantity">Quantity</label>
+                  <input type="number" class="form-control" id="medicineQuantity" placeholder="Quantity">
+                </div>
+                <div class="form-group my-4">
+                  <div class="input-group">
+                    <div class="input-group">
+                      <label>Total Price</label>  
+                    </div>
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Rs</span>
+                    </div>
+                    <input type="text" class="form-control" value="2300.00" disabled/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary buy-medicine-button">Buy Medicine</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="orderReplacementModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="buyMedicineModalTitle">Order Replacement</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-body">
+                <div class="form-group">
+                  <input type="number" class="form-control" id="replacementQuantity" placeholder="Quantity">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary buy-medicine-button">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -247,6 +319,8 @@
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="js/totalMedicineSalesChart.js"></script>
+
+    <script src="js/buyMedicine.js"></script>
   </body>
 
 </html>
