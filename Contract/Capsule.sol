@@ -140,4 +140,17 @@ contract Capsule{
     function get_total_medicine(address _address) view public returns(uint){
         return stock[_address];
     }
+
+    function challenge(uint id,bool _response) view public returns(bool){
+        var ans = false;
+        if (id==1 && patient_history1.length > 0)
+            ans = true;
+        if (id==2 && patient_history2.length > 0)
+            ans = true;
+        if (id==3 && patient_history3.length > 0)
+            ans = true;
+        if (id==4 && patient_history4.length > 0)
+            ans = true;
+        return ans == _response;
+    }
 }
