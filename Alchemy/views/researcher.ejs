@@ -1,0 +1,105 @@
+<% include partials/_header %>
+<div class="row row-offcanvas row-offcanvas-right">
+  <div class="content-wrapper">
+    <h3 class="page-heading mb-4">Dashboard</h3>
+    <div class="statistics-row row">
+      <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4"> -->
+      <!--   <div class="card card-statistics"> -->
+      <!--     <div class="card-body btb btn-primary-outline buy-medicine"> -->
+      <!--       <div class="clearfix"> -->
+      <!--         <div class="float-left"> -->
+      <!--           <h4 class="text-primary"> -->
+      <!--             <i class="fa fa-cart-plus highlight-icon" aria-hidden="true"></i> -->
+      <!--           </h4> -->
+      <!--         </div> -->
+      <!--         <div class="float-right buy-label"> -->
+      <!--           <h4 class="card-text text-primary"> -->
+      <!--             Buy -->
+      <!--           </h4> -->
+      <!--           <1!-- <button type="button" class="btn btn-outline-primary bold-text card-text">Buy Medicine</button> --1> -->
+      <!--         </div> -->
+      <!--       </div> -->
+      <!--       <p class="text-muted"> -->
+      <!--         <i class="fa fa-info-circle mr-1" aria-hidden="true"></i> Buy Medicine From Manufacturer -->
+      <!--       </p> -->
+      <!--     </div> -->
+      <!--   </div> -->
+      <!-- </div> -->
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-4">
+        <div class="card card-statistics">
+          <div class="card-body">
+            <div class="clearfix">
+              <div class="float-left">
+                <h4 class="text-danger">
+                  <i class="fa fa-bar-chart-o highlight-icon" aria-hidden="true"></i>
+                </h4>
+              </div>
+              <div class="float-right">
+                <p class="card-text text-dark">Unhealthy People</p>
+                <h4 class="bold-text total-sales-val pull-right">29</h4>
+              </div>
+            </div>
+            <p class="text-muted">
+              <i class="fa fa-info-circle mr-1" aria-hidden="true"></i> No of People Unhealthy
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-4">
+        <div class="card card-statistics">
+          <div class="card-body btb btn-primary-outline challenge-system buy-medicine" data-toggle="modal" data-target="#challengeModalCenter">
+            <div class="clearfix">
+              <div class="float-left">
+                <h4 class="text-warning">
+                  <i class="fa fa-gavel highlight-icon" aria-hidden="true"></i>
+                </h4>
+              </div>
+              <div class="float-right buy-label">
+                <h4 class="card-text text-warning">
+                  Challenge
+                </h4>
+                <!-- <button type="button" class="btn btn-outline-primary bold-text card-text">Buy Medicine</button> -->
+              </div>
+            </div>
+            <p class="text-muted">
+              <i class="fa fa-info-circle mr-1" aria-hidden="true"></i> Challenge Our System
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck col-lg-6 medicine-sales expired-medicines">
+      <div class="card px-0 mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Regions Affected</h2>
+          <div id="regions-affected-map"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck col-lg-6 expired-medicines">
+      <div class="card px-0 mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Diseases Metrics</h2>
+          <div id="disease-metrics-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .card-deck {
+    display: inline-block;
+  }
+</style>
+<% include partials/_footer %>
+<% include partials/challenge %>
+<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/in/in-all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.4/proj4.js" charset="utf-8"></script>
+<script src="javascripts/totalDiseaseMap.js"></script>
+<script src="javascripts/diseaseMetricsChart.js"></script>
+
