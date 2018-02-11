@@ -17,29 +17,7 @@
                     <th>Medicine</th>
                     <th>Description</th>
                 </thead>
-                <tbody>
-                  <tr class="">
-                    <td>
-                       Jayesh Koli
-                    </td>
-                    <td>
-                        Calpol
-                    </td>
-                     <td>
-                        Fever
-                     </td>
-                  </tr>
-                  <tr class="">
-                    <td>
-                       Yash Puthran
-                    </td>
-                    <td>
-                        Javeres
-                    </td>
-                     <td>
-                        Cough
-                     </td>
-                  </tr>
+                <tbody id="history-patient">
                 </tbody>
               </table>
             </div>
@@ -52,3 +30,27 @@
     </div>
   </div>
 </div>
+<script>
+    $(document).ready(function(){
+        var history = [];
+        try{
+            var i = 0;
+            while(true){
+                history.push(Capsule.patient_history1(i))
+                i++;
+            }
+        } catch(err) {}
+        var table = "";
+        var medMap = {1: 'Calpol',2: 'Dolo',3: 'Tusprox'};
+        var diagMap = {'m': 'Malaria','d': 'Dengue', 't': 'Typhoid'};
+        history.map(function(his) {
+            table += "<tr><td>" + his[0] + "</td>";
+            table += "<td>" + medMap[parseInt(his[1].toString())] + "</td>";
+            table += "<td>" + diagMap[his[2]] + "</td></tr>";
+        });
+        console.log(table);
+        document.getElementById('history-patient').innerHTML = table;
+
+    });
+
+</script>

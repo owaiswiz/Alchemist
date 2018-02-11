@@ -63,9 +63,9 @@ var data = [
 ];
 
 stateNames.map(function(stateName) {
-  var malaria = 29;
-  var typhoid = 12;
-  var dengue = 11;
+  var malaria = Math.random()*100;
+  var typhoid = Math.random()*100;
+  var dengue = Math.random()*100;
   data.push(populateData(stateName,malaria,typhoid,dengue,0 ))
   // tempVoted.push([stateName, Math.floor(Math.random()*100),Math.floor(Math.random()*100),Math.floor(Math.random()*100),Math.floor(Math.random()*100)])
 });

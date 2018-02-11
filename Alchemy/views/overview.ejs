@@ -5,11 +5,19 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/d3Style.css">
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+
+    <script src="javascripts/ethereum.js" charset="utf-8"></script>
 
   </head>
   <body>
     <!-- particles.js container -->
-    <h1>Caring for Health Records Since 2018</h1>
+
+    <div class="container-capsule" style="text-align: center">
+      <h1>Capsule</h1>
+      <h2>Caring for Health Records Since 2hrs</h2>
+    </div>
+
     <div id="canvas"></div>
     <div id="particles-js"></div>
 
@@ -115,11 +123,11 @@ var graph = {
 //    });
 
 var hashes_dict = ["#shdbfh","#sfgsidfj","#hdsbfsf","#idhbfd","#hbdfdfd"];
-var hashes_dict_len = hashes_dict.length;
+var hashes_dict_len = Capsule.block_no();
 for (var i = 0; i < hashes_dict_len; i++) {
     graph.nodes.push({
-      "atom": hashes_dict[i],
-      "size": Math.floor(Math.random() * 150) + 50  
+      "atom": hashes_dict[i%hashes_dict.length],
+      "size": Math.floor(Math.random() * 40) + 40
     });
   if(i != hashes_dict_len-1){
     graph.links.push({

@@ -3,7 +3,7 @@
 /* global getTotalVotes */
 // Create the chart
 
-var malaria = 29, typhoid = 12, dengue = 11, others = 0;
+var malaria = medsCount[0], typhoid = medsCount[1], dengue = medsCount[2], others = 0;
 var totalVotes = [malaria, typhoid, dengue, others].reduce(getTotalVotes);
 function percentVotes(votes) {
   return (votes/totalVotes) * 100;

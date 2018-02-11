@@ -4,12 +4,11 @@ $("document").ready(function(){
     $(".challenge-before").css({'display': 'none'});
     $(".submit-challenge").css({'display': 'none'});
     if ($('.challenge-before input[type="radio"]:checked').val()=="yes") {
-      // random = Voting.challenge(web3.eth.accounts[ethid],true);
-      random = true;
+      random = Capsule.challenge(1,true);
     }
     else{
-      // random = Voting.challenge(web3.eth.accounts[ethid],false);
-      random = false;
+      random = Capsule.challenge(1,false);
+
     }
     if (random)
       $(".challenge-after.success").css({'display': 'block'});
