@@ -93,6 +93,25 @@ let CapsuleContract = web3.eth.contract([
         "constant": true,
         "inputs": [
             {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "diseases",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
                 "name": "_address",
                 "type": "address"
             }
@@ -146,11 +165,11 @@ let CapsuleContract = web3.eth.contract([
                 "type": "address"
             },
             {
-                "name": "_amount",
+                "name": "_status",
                 "type": "uint256"
             }
         ],
-        "name": "re_order",
+        "name": "setStatus",
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
@@ -164,11 +183,15 @@ let CapsuleContract = web3.eth.contract([
                 "type": "address"
             },
             {
-                "name": "_status",
+                "name": "_amount",
+                "type": "uint256"
+            },
+            {
+                "name": "med_id",
                 "type": "uint256"
             }
         ],
-        "name": "setStatus",
+        "name": "re_order",
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
@@ -195,6 +218,20 @@ let CapsuleContract = web3.eth.contract([
             {
                 "name": "description",
                 "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "block_no",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
             }
         ],
         "payable": false,
@@ -229,6 +266,48 @@ let CapsuleContract = web3.eth.contract([
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "medicine_history",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "a",
+                "type": "string"
+            },
+            {
+                "name": "b",
+                "type": "string"
+            }
+        ],
+        "name": "compareStrings",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -339,6 +418,6 @@ let CapsuleContract = web3.eth.contract([
     }
 ]);
 
-let Capsule = CapsuleContract.at('0x43e29125e1aeaf298f9320cb6e59dfba9669130b');
+let Capsule = CapsuleContract.at('0x6862e68896a5cc754386c081ce12b992b3b4ac6f');
 
 console.log(Capsule)
