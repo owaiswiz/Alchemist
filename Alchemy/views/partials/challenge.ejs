@@ -1,0 +1,60 @@
+<div class="modal fade" id="challengeModalCenter" tabindex="-1" role="dialog" aria-labelledby="challengeModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="challengeModalLongTitle">Challenge our
+          System</h5>
+        <button type="button" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div
+        class="modal-body">
+        <div
+          class="challenge-before">
+          <h4>Can you buy a medicine?</h4>
+          <form class="challenge-container">
+            <div class="input-container">
+              <input id="yes" type="radio" name="casted" value="yes" />
+              <label
+                for="yes">Yes</label>
+            </div>
+            <div class="input-container">
+              <input id="no" type="radio" name="casted" value="no" />
+              <label for="no">No</label>
+            </div>
+          </form>
+        </div>
+        <div class="challenge-after success" style="display:none">
+          <div class="card card-statistics">
+            <div class="card-body">
+              <h4 class="text-success text-center">
+                <i class="fa fa-check highlight-icon" aria-hidden="true"></i>
+              </h4>
+              <h4 class="text-success text-center">
+                Verified
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="challenge-after failed" style="display:none">
+          <div class="card card-statistics">
+            <div class="card-body">
+              <h4 class="text-danger text-center">
+                <i class="fa fa-times highlight-icon" aria-hidden="true"></i>
+              </h4>
+              <h4 class="text-danger text-center">
+                Failed
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary submit-challenge">Submit</button>
+      </div>
+    </div>
+  </div>
+  <script src="javascripts/challenge.js"></script>
