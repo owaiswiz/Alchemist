@@ -16,7 +16,7 @@ contract Capsule{
         //checks for the owner of medicine
         require(from_address == medicines[id].medicine_owner);
 
-        //checks wether medicine is prescribed by some authentic doctor
+        //checks wether medicine is prescribed by some authentic doctor or he is a chemist
         require(prescribed[to_address][id] != uint(0x0));
 
         //expiry date needed to be added here
@@ -65,6 +65,13 @@ contract Capsule{
     record[] public patient_history4;
 
 
+    mapping(uint => uint ) medicine_history;
+
+    mapping(string => uint) diseases;
+
+    uint public block_no=3;
+
+
     function setStatus(address _address,uint _status) onlyOwner public {
         status[_address]=_status;
     }
@@ -80,6 +87,21 @@ contract Capsule{
     //     msg.sender.send(medicines[id].amount);
     // }
 
+    function remove(uint[] array, uint index) internal returns(uint[] value) {
+        if (index >= array.length) return;
+
+        uint[] memory arrayNew = new uint[](array.length-1);
+        for (uint i = 0; i<arrayNew.length; i++){
+            if(i != index && i<index){
+                arrayNew[i] = array[i];
+            } else {
+                arrayNew[i] = array[i+1];
+            }
+        }
+        delete array;
+        return arrayNew;
+    }
+
     function buy_medicine(uint id,address from_address) public isAuthentic(id,from_address,msg.sender) returns(bool){
 
         //pay ehter
@@ -89,8 +111,8 @@ contract Capsule{
         medicines[id].medicine_owner = msg.sender;
 
         // remove rescribed medicine from list
-        delete prescribed[msg.sender][id];
-
+        //        delete prescribed[msg.sender][id];
+        remove(prescribed[msg.sender],id);
     }
 
     // add mediciens by manufacture ==> need to send to chemist
@@ -105,10 +127,15 @@ contract Capsule{
         stock[_address]+=1;
     }
 
-    function re_order(address _address, uint _amount)public {
+    function re_order(address _address, uint _amount,uint med_id)public {
         stock[_address]+=_amount;
+        medicine_history[med_id]+=1;
     }
 
+
+    function compareStrings (string a, string b) view returns (bool){
+        return keccak256(a) == keccak256(b);
+    }
 
     //medicine to prescribe by doctor
     function prescrib(address _address,uint id,string _doctor,string _description,uint patien_id) isDoctor(msg.sender) public{
@@ -124,18 +151,20 @@ contract Capsule{
         if (patien_id==4)
             patient_history4.push(pr);
 
+        diseases[_description]+=1;
+        block_no+=1;
     }
 
-    function get_patient_history(uint id) view public returns(record[]){
-        if (id==1)
-            return  patient_history1;
-        if (id==2)
-            return patient_history2;
-        if (id==3)
-            return patient_history3;
-        if (id==4)
-            return patient_history4;
-    }
+    // function get_patient_history(uint id) view public returns(record[]){
+    //     if (id==1)
+    //       return  patient_history1;
+    //     if (id==2)
+    //         return patient_history2;
+    //     if (id==3)
+    //         return patient_history3;
+    //     if (id==4)
+    //         return patient_history4;
+    // }
 
     function get_total_medicine(address _address) view public returns(uint){
         return stock[_address];
@@ -152,5 +181,9 @@ contract Capsule{
         if (id==4 && patient_history4.length > 0)
             ans = true;
         return ans == _response;
+    }
+
+    function get_disease_history() view public returns(uint,uint,uint){
+        return (diseases["m"],diseases["d"],diseases["t"]);
     }
 }
