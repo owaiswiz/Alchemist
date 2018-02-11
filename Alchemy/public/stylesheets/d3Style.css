@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+/* ---- reset ---- */
+
+body {
+  margin: 0;
+  font:normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00BCD4;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* ---- stats.js ---- */
+
+.count-particles{
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: .8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles{
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+  -webkit-user-select: none;
+}
+
+#stats{
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles{
+  border-radius: 0 0 3px 3px;
+}
+
+
+body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+body h1 {
+    letter-spacing: 1px;
+    padding-left: 2rem;
+    font-size: 2rem;
+    font-family: 'Roboto', cursive;
+    font-weight: bolder;
+}
+
+#canvas {
+  height: 100vh;
+}
+#canvas svg {
+
+    background-color: rgba(0, 188, 212, 0.5);
+}
+#particles-js {
+    top: 0;
+    height: 100vh;
+    z-index: -999;
+    position: absolute;
+}
+
+.link line {
+  stroke: #696969;
+}
+
+.link line.separator {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.node circle {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
