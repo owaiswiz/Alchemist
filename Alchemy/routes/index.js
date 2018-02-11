@@ -18,6 +18,13 @@ router.get('/patient',function(req,res) {
   res.render('patient');
 });
 
+router.get('/overview',function(req,res) {
+  res.render('overview');
+});
+
+router.get('/researcher',function(req,res) {
+  res.render('researcher');
+});
 
 
 function ensureAuthenticated(req, res, next) {
