@@ -102,13 +102,13 @@ contract Capsule{
         return arrayNew;
     }
 
-    function buy_medicine(uint id,address from_address) public isAuthentic(id,from_address,msg.sender) returns(bool){
+    function buy_medicine(uint id,address from_address,address to_address) public isAuthentic(id,from_address,to_address) returns(bool){
 
         //pay ehter
         // from_address.transfer(medicines[id].amount);
 
         //change owwner
-        medicines[id].medicine_owner = msg.sender;
+        medicines[id].medicine_owner = to_address;
 
         // remove rescribed medicine from list
         //        delete prescribed[msg.sender][id];
@@ -140,7 +140,7 @@ contract Capsule{
     }
 
     //medicine to prescribe by doctor
-    function prescrib(address _address,uint id,string _doctor,string _description,uint patien_id) isDoctor(msg.sender) public{
+    function prescrib(address _address,uint id,string _doctor,string _description,uint patien_id,address to_address) isDoctor(to_address) public{
         prescribed[_address].push(id);
         // var pr = patient_history1[];
         var pr =record(_doctor,id,_description);
@@ -188,4 +188,10 @@ contract Capsule{
     function get_disease_history() view public returns(uint,uint,uint){
         return (diseases["m"],diseases["d"],diseases["t"]);
     }
+
+    function get_medicine_history() view public returns(uint,uint,uint){
+        return (medicine_history[1],medicine_history[2],medicine_history[3]);
+    }
+
+
 }

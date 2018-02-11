@@ -13,20 +13,20 @@
             <div class="form-group">
               <div class="form-check form-check-flat">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="flatRadios1" id="flatRadios1" value="calpol">
+                  <input type="checkbox" class="form-check-input" name="flatRadios1" id="flatRadios1" value="c">
                   Calpol
                   <i class="input-helper"></i></label>
               </div>
               <div class="form-check form-check-flat">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="flatRadios2" id="flatRadios2" value="javeres">
-                  Javeres
+                  <input type="checkbox" class="form-check-input" name="flatRadios2" id="flatRadios2" value="d">
+                  Dolo
                   <i class="input-helper"></i></label>
               </div>
               <div class="form-check form-check-flat">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="flatRadios2" id="flatRadios2" value="javeres">
-                  Eyeres
+                  <input type="checkbox" class="form-check-input" name="flatRadios2" id="flatRadios3" value="t">
+                  Tusprox
                   <i class="input-helper"></i></label>
               </div>
             </div>
@@ -35,8 +35,21 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary buy-medicine-button">Prescribe Medicine</button>
+        <button type="button" id="prescribe-medicine" class="btn btn-primary buy-medicine-button">Prescribe Medicine</button>
       </div>
     </div>
   </div>
 </div>
+<script>
+    $("#prescribe-medicine").click(function(){
+
+        if($("#flatRadios1").is(':checked'))
+                Capsule.prescrib(web3.eth.accounts[0],1,"Saurav Kanchan","m",1,web3.eth.accounts[2],{from:web3.eth.accounts[0],gas:3000000})
+        if($("#flatRadios2").is(':checked'))
+            Capsule.prescrib(web3.eth.accounts[0],2,"Saurav Kanchan","d",1,web3.eth.accounts[2],{from:web3.eth.accounts[0],gas:3000000})
+        if($("#flatRadios3").is(':checked'))
+            Capsule.prescrib(web3.eth.accounts[0],3,"Saurav Kanchan","m",1,web3.eth.accounts[2],{from:web3.eth.accounts[0],gas:3000000})
+
+    });
+
+</script>
