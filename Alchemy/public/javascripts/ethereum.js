@@ -12,25 +12,12 @@ web3.eth.defaultAccount = web3.eth.accounts[0];
 let CapsuleContract = web3.eth.contract([
     {
         "constant": true,
-        "inputs": [
+        "inputs": [],
+        "name": "block_no",
+        "outputs": [
             {
                 "name": "",
                 "type": "uint256"
-            }
-        ],
-        "name": "patient_history4",
-        "outputs": [
-            {
-                "name": "doctor_name",
-                "type": "string"
-            },
-            {
-                "name": "id",
-                "type": "uint256"
-            },
-            {
-                "name": "description",
-                "type": "string"
             }
         ],
         "payable": false,
@@ -43,27 +30,40 @@ let CapsuleContract = web3.eth.contract([
             {
                 "name": "id",
                 "type": "uint256"
+            },
+            {
+                "name": "_response",
+                "type": "bool"
             }
         ],
-        "name": "get_patient_history",
+        "name": "challenge",
         "outputs": [
             {
-                "components": [
-                    {
-                        "name": "doctor_name",
-                        "type": "string"
-                    },
-                    {
-                        "name": "id",
-                        "type": "uint256"
-                    },
-                    {
-                        "name": "description",
-                        "type": "string"
-                    }
-                ],
                 "name": "",
-                "type": "tuple[]"
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "a",
+                "type": "string"
+            },
+            {
+                "name": "b",
+                "type": "string"
+            }
+        ],
+        "name": "compareStrings",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
             }
         ],
         "payable": false,
@@ -97,8 +97,92 @@ let CapsuleContract = web3.eth.contract([
                 "type": "uint256"
             }
         ],
-        "name": "diseases",
+        "name": "patient_history4",
         "outputs": [
+            {
+                "name": "doctor_name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "uint256"
+            },
+            {
+                "name": "description",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "patient_history3",
+        "outputs": [
+            {
+                "name": "doctor_name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "uint256"
+            },
+            {
+                "name": "description",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "patient_history2",
+        "outputs": [
+            {
+                "name": "doctor_name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "uint256"
+            },
+            {
+                "name": "description",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "get_disease_history",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "name": "",
+                "type": "uint256"
+            },
             {
                 "name": "",
                 "type": "uint256"
@@ -128,6 +212,55 @@ let CapsuleContract = web3.eth.contract([
         "type": "function"
     },
     {
+        "constant": true,
+        "inputs": [],
+        "name": "get_medicine_history",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "patient_history1",
+        "outputs": [
+            {
+                "name": "doctor_name",
+                "type": "string"
+            },
+            {
+                "name": "id",
+                "type": "uint256"
+            },
+            {
+                "name": "description",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "constant": false,
         "inputs": [
             {
@@ -135,24 +268,47 @@ let CapsuleContract = web3.eth.contract([
                 "type": "address"
             },
             {
+                "name": "_uid",
+                "type": "uint256"
+            },
+            {
+                "name": "_name",
+                "type": "string"
+            },
+            {
+                "name": "_date",
+                "type": "uint256"
+            },
+            {
+                "name": "_amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "addMedicine",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
                 "name": "id",
                 "type": "uint256"
             },
             {
-                "name": "_doctor",
-                "type": "string"
-            },
-            {
-                "name": "_description",
-                "type": "string"
-            },
-            {
-                "name": "patien_id",
-                "type": "uint256"
+                "name": "from_address",
+                "type": "address"
             }
         ],
-        "name": "prescrib",
-        "outputs": [],
+        "name": "buy_medicine",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
         "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
@@ -198,47 +354,6 @@ let CapsuleContract = web3.eth.contract([
         "type": "function"
     },
     {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "patient_history3",
-        "outputs": [
-            {
-                "name": "doctor_name",
-                "type": "string"
-            },
-            {
-                "name": "id",
-                "type": "uint256"
-            },
-            {
-                "name": "description",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "block_no",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
         "constant": false,
         "inputs": [
             {
@@ -246,168 +361,26 @@ let CapsuleContract = web3.eth.contract([
                 "type": "address"
             },
             {
-                "name": "_uid",
+                "name": "id",
                 "type": "uint256"
             },
             {
-                "name": "_name",
+                "name": "_doctor",
                 "type": "string"
             },
             {
-                "name": "_date",
-                "type": "uint256"
+                "name": "_description",
+                "type": "string"
             },
             {
-                "name": "_amount",
+                "name": "patien_id",
                 "type": "uint256"
             }
         ],
-        "name": "addMedicine",
+        "name": "prescrib",
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "medicine_history",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "a",
-                "type": "string"
-            },
-            {
-                "name": "b",
-                "type": "string"
-            }
-        ],
-        "name": "compareStrings",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "patient_history2",
-        "outputs": [
-            {
-                "name": "doctor_name",
-                "type": "string"
-            },
-            {
-                "name": "id",
-                "type": "uint256"
-            },
-            {
-                "name": "description",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "id",
-                "type": "uint256"
-            },
-            {
-                "name": "_response",
-                "type": "bool"
-            }
-        ],
-        "name": "challenge",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "id",
-                "type": "uint256"
-            },
-            {
-                "name": "from_address",
-                "type": "address"
-            }
-        ],
-        "name": "buy_medicine",
-        "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "patient_history1",
-        "outputs": [
-            {
-                "name": "doctor_name",
-                "type": "string"
-            },
-            {
-                "name": "id",
-                "type": "uint256"
-            },
-            {
-                "name": "description",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -418,6 +391,6 @@ let CapsuleContract = web3.eth.contract([
     }
 ]);
 
-let Capsule = CapsuleContract.at('0x6862e68896a5cc754386c081ce12b992b3b4ac6f');
+let Capsule = CapsuleContract.at('0x1182fc3ff261a89c3b1971bdc85a6eb2fac7b51b');
 
 console.log(Capsule)

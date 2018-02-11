@@ -9,7 +9,7 @@ Highcharts.chart('medicine-sales-chart', {
     // dateTimeLabelFormats: {
     //   day: '%A'    //ex- 01 Jan 2016
     // }
-    categories: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+    categories: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
     labels: {
       align: 'left'
     }
@@ -38,19 +38,13 @@ Highcharts.chart('medicine-sales-chart', {
 
   series: [{
     name: 'Kalpol',
-    data: [43934, 57177, 69658, 97031, 119931, 137133, 154175]
+    data: [1, 2, 0, 1, 3, 2, parseInt(Capsule.get_medicine_history()[0].toString())]
   }, {
     name: 'Eayelie',
-    data: [24916, 29742, 29851, 32490, 30282, 38121, 40434]
+    data: [6, 2, 1, 0, 2, 1, parseInt(Capsule.get_medicine_history()[1].toString())]
   }, {
     name: 'Merse',
-    data: [11744, 16005, 19771, 20185, 24377, 32147, 39387]
-  }, {
-    name: 'Teses',
-    data: [ 92323, 7988, 12169, 15112, 22452, 34400, 34227]
-  }, {
-    name: 'Jevere',
-    data: [5948, 8105, 11248, 8989, 11816, 18274, 18111]
+    data: [4, 5, 1, 5, 7, 7, parseInt(Capsule.get_medicine_history()[2].toString())]
   }],
 
   responsive: {

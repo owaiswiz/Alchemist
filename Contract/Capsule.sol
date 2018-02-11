@@ -113,6 +113,9 @@ contract Capsule{
         // remove rescribed medicine from list
         //        delete prescribed[msg.sender][id];
         remove(prescribed[msg.sender],id);
+
+        medicine_history[id]+=1;
+
     }
 
     // add mediciens by manufacture ==> need to send to chemist
@@ -129,7 +132,6 @@ contract Capsule{
 
     function re_order(address _address, uint _amount,uint med_id)public {
         stock[_address]+=_amount;
-        medicine_history[med_id]+=1;
     }
 
 
